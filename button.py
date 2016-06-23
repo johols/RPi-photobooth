@@ -1,5 +1,3 @@
-#!/usr/bin/python
-
 import RPi.GPIO as GPIO, time, os, subprocess
 
 GPIO.setmode(GPIO.BCM)
@@ -20,9 +18,11 @@ try:
     while (True):
         #print(GPIO.input(switch))
         if (not GPIO.input(switch)):
+            #subprocess.call("sudo /home/pi/photobooth/restart_printer", shell=True)
+            os.system("sudo service cups restart")
             tick = 0
             while tick < 4:
-                os.system("sudo service cups restart")
+                #subprocess.call("sudo /home/pi/photobooth/restart_printer", shell=True)
                 GPIO.output(ready_led, 0)
                 GPIO.output(pose_led, 1)
                 print("button pushed, take 4 photos")
@@ -43,16 +43,17 @@ try:
                 if "ERROR" not in gpout:
                     tick += 1
                 GPIO.output(pose_led, 0)
-                time.sleep(1.5)
+                time.sleep(0.5)
             GPIO.output(busy_led, 1)
             print("about to call print_photo script...")
             subprocess.call("sudo /home/pi/photobooth/print_photo", shell=True)
             time.sleep(50)
             subprocess.call("sudo /home/pi/photobooth/restart_printer", shell=True)
-            time.sleep(10)
+            time.sleep(5)
             GPIO.output(busy_led, 0)
             GPIO.output(ready_led, 1)
             GPIO.output(pose_led, 0)
+            os.system("sudo reboot")
         #else:
             #print("OFF")
             #GPIO.output(ready_led, 0)
