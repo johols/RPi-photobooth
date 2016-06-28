@@ -20,12 +20,10 @@ Raspberry Pi 2
 
 ##Note
 - one extra button (with built-in led) is added. It is used to restart the main python script (button.py) when the script accidently stops. This typically happens when the camera goes into sleep mode. This second button is controlled by the script restart_button.py. 
+- after a successfull print, the system is set to reboot. This is because sometimes the printer goes into paus mode (hangs). It might not be necessary if you change error policy. See: https://lwn.net/Articles/498216/  or  https://bbs.archlinux.org/viewtopic.php?id=202022  or   https://www.novell.com/support/kb/doc.php?id=7014022
 
-## Images
-![GitHub Logo](/photobooth_front.png)
-
-
-![GitHub Logo](/photobooth_back.jpg)
+##TODO
+- add externas USB disk or flash memory to store the pictuers before removing them.
 
 
 ##Useful commands
