@@ -6,6 +6,7 @@ Camera and photo printer controlled by a raspberry pi. This project is based on 
 First Header | Second Header
 ------------ | -------------
 ![GitHub Logo](/photobooth_front.png) | ![GitHub Logo](/photobooth_back.jpg)
+![GitHub Logo](/photobooth_bb.png)
 
 ##Setup
 Follow instructions from link. 
