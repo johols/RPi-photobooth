@@ -1,25 +1,25 @@
 # RPi-photobooth
-Camera and photo printer controlled by a raspberry pi. This project is based on the instructions from this post: http://www.instructables.com/id/Raspberry-Pi-photo-booth-controller
+Camera and photo printer controlled by a raspberry pi. All components are put in a case, a box of wood. The process of printing a pictures (4 photos) starts when the button on the front is pushed. 2 leds then indicates the progress (pose-led and printing-led). This project is based on the instructions from this post: http://www.instructables.com/id/Raspberry-Pi-photo-booth-controller
 
 
 
-Front | BAck
+Front | Back
 ------------ | -------------
 ![GitHub Logo](/photobooth_front.png) | ![GitHub Logo](/photobooth_back.jpg)
 Circuit | Description
-![GitHub Logo](/circuit.png) | 1K ohm, 10K ohm, 330 ohm, 4 leds, push switch
+![GitHub Logo](/circuit.png) | 1K ohm (2), 10K ohm, (2) 330 ohm (4), leds (4), push switch (2)
 
 ##Setup
 Follow instructions from link. 
-Printer: Canon SELPHY 910
-Camera: Canon
-Raspberry Pi 2
+- Printer: Canon SELPHY 910
+- Camera: Canon
+- Controller: Raspberry Pi 2
 
 ###Set Raspberry to startup script on reboot
 `sudo nano /etc/rc.local`
 
 ##Note
-- one extra button (with built-in led) is added. It is used to restart the main python script (button.py) when the script accidently stops. This typically happens when the camera goes into sleep mode. This second button is controlled by the script restart_button.py. 
+- one extra button (with built-in led) is added, compared to the instructins from link. It is used to restart the main python script (button.py) when the script accidently stops. This typically happens when the camera goes into sleep mode. This second button is controlled by the script restart_button.py. 
 - after a successfull print, the system is set to reboot. This is because sometimes the printer goes into paus mode (hangs). It might not be necessary if you change error policy. See: https://lwn.net/Articles/498216/  or  https://bbs.archlinux.org/viewtopic.php?id=202022  or   https://www.novell.com/support/kb/doc.php?id=7014022
 
 ##TODO
