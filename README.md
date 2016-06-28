@@ -7,7 +7,7 @@ Front | Back
 ------------ | -------------
 ![GitHub Logo](/photobooth_front.png) | ![GitHub Logo](/photobooth_back.jpg)
 Circuit | Description
-![GitHub Logo](/circuit.png) | 1K ohm (2), 10K ohm, (2) 330 ohm (4), leds (4), push switch (2)
+![GitHub Logo](/circuit.png) | 1K ohm (2 of each), 10K ohm, (2 of each) 330 ohm (4 of each), leds (4 of each), push switch (2 of each)
 
 ##Setup
 Follow instructions from link. 
@@ -24,6 +24,7 @@ Follow instructions from link.
 
 ##TODO
 - add externas USB disk or flash memory to store the pictuers before removing them.
+- set error policy for printer in CUPS
 
 
 ##Useful commands
